@@ -1,0 +1,25 @@
+<div ng-controller="PredictionsController" ng-init="findOne(); populateMatches()">
+	<div class="container">
+		<h2>{{ global.currentUser().name }}'s Predictions</h2>
+		<div class="masonry">
+			<div class="masonry-brick" ng-repeat=" prediction in prediction.predictions | orderBy:'matchNumber' " >
+				<div class="masonry-brick-match">
+					<div class="masonry-brick-match-team">
+						<h5>{{ matches[$index].team.home.team_id.country }}</h5>
+						<p id="score"> {{ prediction.score.home }}
+					</div>
+					<div class="masonry-brick-match-line"></div>
+					<div class="masonry-brick-match-team">
+						<h5>{{ matches[$index].team.away.team_id.country }}</h5>
+						<p id="score"> {{ prediction.score.away }}
+					</div>
+				</div>
+				<div class="masonry-brick-info">
+					<h5>{{ matches[$index].matchDate | date: 'dd/MM HH:mm' }}</h5>
+					<h5>Match: {{ prediction.matchNumber }}</h5>
+					<p>{{ matches[$index].venue.city }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

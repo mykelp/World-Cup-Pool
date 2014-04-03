@@ -1,0 +1,12 @@
+<div ng-controller="TeamsController" ng-init="findOne()">
+	<h2>{{ team.country }}</h2>
+	<p><strong>Abbreviation: </strong>{{ team.abbr }}</p>
+	<p><strong>Group: </strong>{{ team.group }}</p>
+	<p><strong>Matches Played: </strong>{{ team.played }}</p>
+	<p><strong>Won: </strong>{{ team.won }}</p>
+	<p><strong>Draw: </strong>{{ team.draw }}</p>
+	<p><strong>Goals For: </strong>{{ team.goalsfor }}</p>
+	<p><strong>Goals Against: </strong>{{ team.goalsagainst }}</p>
+	<br>
+	<a href="#!/teams">View all teams</a>
+</div>

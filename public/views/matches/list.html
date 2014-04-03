@@ -1,0 +1,25 @@
+<div class="match-list-body" ng-controller="MatchesController" ng-init="find()">
+	<div class="container">
+		<h2>Matches</h2>
+		<div class="masonry">
+			<div class="masonry-brick" ng-repeat=" match in matches | orderBy:'matchNumber' " >
+				<div class="masonry-brick-match">
+					<div class="masonry-brick-match-team">
+						<h5>{{ match.team.home.team_id.country }}</h5>
+						<p id="score"> {{ match.team.home.score }}
+					</div>
+					<div class="masonry-brick-match-line"></div>
+					<div class="masonry-brick-match-team">
+						<h5>{{ match.team.away.team_id.country }}</h5>
+						<p id="score"> {{ match.team.away.score }}
+					</div>
+				</div>
+				<div class="masonry-brick-info">
+					<h5>{{ match.matchDate | date: 'dd/MM HH:mm' }}</h5>
+					<h5>Match: {{ match.matchNumber }}</h5>
+					<p>{{ match.venue.city }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

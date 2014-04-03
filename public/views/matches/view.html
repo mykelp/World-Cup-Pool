@@ -1,0 +1,7 @@
+<div ng-controller="MatchesController" ng-init="findOne()">
+	<p><strong>Date: </strong>{{ match.matchDate | date: 'dd/MM HH:mm' }}</p>
+	<p><strong>Home Team: </strong>{{ match.team.home.team_id.abbr }}</p>
+	<p><strong>Away team: </strong>{{ match.team.away.team_id.abbr }}</p>
+	<br>
+	<a href="#!/matches">View all Matches</a>
+</div>

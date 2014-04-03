@@ -1,0 +1,36 @@
+<div ng-controller="GroupsController" ng-init="find()">
+	<div class="container">
+		<h2>Groups</h2>
+		<li ng-repeat="group in groups">
+			<a href="#!/groups/{{ group._id }}"> Group {{ groupLetters[$index] }}</a>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Team</th>
+						<th>MP</th>
+						<th>W</th>
+						<th>D</th>
+						<th>L</th>
+						<th>GF</th>
+						<th>GA</th>
+						<th>Pts</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="team in group.teams | orderObjectBy:'points':true">
+						<td>
+							<a href="#!/teams/{{ team._id }}">{{ team.team.country }}</a>
+						</td>
+						<td>{{ team.played }}</td>
+						<td>{{ team.won }}</td>
+						<td>{{ team.draw }}</td>
+						<td>{{ team.loss }}</td>
+						<td>{{ team.goalsfor }}</td>
+						<td>{{ team.goalsagainst }}</td>
+						<td>{{ team.points }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+	</div>
+</div>
