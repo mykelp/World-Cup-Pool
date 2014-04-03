@@ -2,7 +2,7 @@
     "name": "World Cup Pool"
   , "description": "World Cup Pool for World Cup 2014"
   , "version": "1.0.0"
-  , "private": false
+  , "private": true
   , "author": "Mykel Pereira"
   , "engines": {
         "node": "0.10.x"
