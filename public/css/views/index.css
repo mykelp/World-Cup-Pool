@@ -55,6 +55,10 @@ body {
 	color: #119c50;
 }
 
+.wcp-index-nav .navbar-toggle .icon-bar {
+	background-color: #119c50;
+}
+
 @media (min-width: 768px){
 	.bs-docs-masthead {
 		padding-top: 80px;
