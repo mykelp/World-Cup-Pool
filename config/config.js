@@ -14,7 +14,7 @@ var path = require('path')
 
 module.exports = {
   development: {
-    db: 'mongodb://localhost/wcp-dev',
+    db: 'mongodb://wcpadmin:wcp2014!@oceanic.mongohq.com:10030/app23706039',
     root: rootPath,
     notifier: notifier,
     app: {
@@ -30,7 +30,7 @@ module.exports = {
     }
   },
   production: {
-    db: 'mongodb://wcpadmin:wcp2014!@oceanic.mongohq.com:10030/app23706039',
+    db: 'mongodb://localhost/wcp',
     root: rootPath,
     notifier: notifier,
     app: {
