@@ -3,7 +3,7 @@ window.angular.module('wcp.directives', [])
     return {
       restrict: 'AC',
       link: function (scope, elem, attrs) {
-        elem.masonry({ itemSelector: '.masonry-brick'});
+        elem.masonry({ itemSelector: '.masonry-brick', columnWidth: '.grid-sizer'});
         // Opitonal Params, delimited in class name like:
         // class="masonry:70;"
         //elem.masonry({ itemSelector: '.masonry-item', columnWidth: 140, gutterWidth: $parse(attrs.masonry)(scope) });
