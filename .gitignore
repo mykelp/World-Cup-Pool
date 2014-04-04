@@ -1,0 +1,9 @@
+# node
+
+npm-debug.log
+node_modules
+
+
+# osx
+
+.DS_Store
