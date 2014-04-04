@@ -110,8 +110,8 @@ body {
 }
 
 @media screen and (max-width: 1224px) {
-  .grid-sizer { width: 31.5%; }
-  .masonry-brick { width: 31.5%; }
+  .grid-sizer { width: 30.5%; }
+  .masonry-brick { width: 30.5%; }
 }
 
 @media screen and (max-width: 720px) {
