@@ -124,8 +124,8 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .grid-sizer { width: 100%; }
-  .masonry-brick { width: 100%; }
+  .grid-sizer { width: 94.5%; }
+  .masonry-brick { width: 94.5%; }
 }
 
 /**** Masonry Transitions ****/
