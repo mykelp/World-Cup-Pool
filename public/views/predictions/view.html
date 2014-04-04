@@ -1,24 +1,29 @@
 <div ng-controller="PredictionsController" ng-init="findOne(); populateMatches()">
 	<div class="container">
 		<h2>{{ global.currentUser().name }}'s Predictions</h2>
-		<div class="masonry">
-			<div class="grid-sizer"></div>
-			<div class="masonry-brick" ng-repeat=" prediction in prediction.predictions | orderBy:'matchNumber' " >
-				<div class="masonry-brick-match">
-					<div class="masonry-brick-match-team">
-						<h5>{{ matches[$index].team.home.team_id.country }}</h5>
-						<p id="score"> {{ prediction.score.home }}
+		<div ng-repeat=" stage in prediction.stagePredictions | orderBy:'stage' ">
+			<div class="row">
+				<h3>Group {{ groupLetters[$index] }}</h3>
+				<div class="masonry">
+					<div class="grid-sizer"></div>
+					<div class="masonry-brick" ng-repeat=" match in stage.matchPredictions | orderBy:'matchNumber' ">
+						<div class="masonry-brick-match">
+							<div class="masonry-brick-match-team">
+								<h5>{{ matches[(match.matchNumber - 1)].team.home.team_id.country }}</h5>
+								<p id="score"> {{ match.score.home }}
+							</div>
+							<div class="masonry-brick-match-line"></div>
+							<div class="masonry-brick-match-team">
+								<h5>{{ matches[(match.matchNumber - 1)].team.away.team_id.country }}</h5>
+								<p id="score"> {{ match.score.away }}
+							</div>
+						</div>
+						<div class="masonry-brick-info">
+							<h5>{{ matches[(match.matchNumber - 1)].matchDate | date: 'dd/MM HH:mm' }}</h5>
+							<h5>Match: {{ match.matchNumber }}</h5>
+							<p>{{ matches[(match.matchNumber - 1)].venue.city }}</p>
+						</div>
 					</div>
-					<div class="masonry-brick-match-line"></div>
-					<div class="masonry-brick-match-team">
-						<h5>{{ matches[$index].team.away.team_id.country }}</h5>
-						<p id="score"> {{ prediction.score.away }}
-					</div>
-				</div>
-				<div class="masonry-brick-info">
-					<h5>{{ matches[$index].matchDate | date: 'dd/MM HH:mm' }}</h5>
-					<h5>Match: {{ prediction.matchNumber }}</h5>
-					<p>{{ matches[$index].venue.city }}</p>
 				</div>
 			</div>
 		</div>

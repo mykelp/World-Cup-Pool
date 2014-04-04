@@ -1,0 +1,65 @@
+<div ng-controller="PredictionsController" ng-init="findOne(); populateMatches()">
+	<div class="container">
+		<h2>{{ global.currentUser().name }}'s Predictions</h2>
+		<div ng-repeat="stage in prediction.stagePredictions | orderBy:'stage' ">
+			<h2>Group {{ groupLetters[$index] }}</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Team</th>
+								<th>W</th>
+								<th>D</th>
+								<th>L</th>
+								<th>GF</th>
+								<th>GA</th>
+								<th>Pts</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="team in stage.teams | orderObjectBy:'points':true">
+								<td>
+									<a href="#!/teams/{{ team._id }}">{{ team.team.country }}</a>
+								</td>
+								<td>{{ team.won }}</td>
+								<td>{{ team.draw }}</td>
+								<td>{{ team.loss }}</td>
+								<td>{{ team.goalsfor }}</td>
+								<td>{{ team.goalsagainst }}</td>
+								<td>{{ team.points }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Matches & Results</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="match in stage.matchPredictions | orderBy:'matchNumber' ">
+								<td>{{ matches[(match.matchNumber - 1)].matchDate | date: 'd MMM yy' }}</td>
+								<td>
+									<a href="#!/teams/{{ match.team.home.team_id._id }}">{{ matches[(match.matchNumber - 1)].team.home.team_id.country }}</a>
+								</td>
+								<td style="width: 50px">
+									<span style="width: 100%">
+										<span>{{ match.score.home }}</span>
+										<span> - </span>
+										<span>{{ match.score.away }}</span>
+									</span>
+								</td>
+								<td>
+									<a href="#!/teams/{{ match.team.away.team_id._id }}">{{ matches[(match.matchNumber - 1)].team.away.team_id.country }}</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

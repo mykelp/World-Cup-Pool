@@ -10,7 +10,7 @@ window.app.config(['$routeProvider', function($routeProvider) {
 	.when('/groups/:groupId', {templateUrl: 'views/groups/view.html'})
 	.when('/predictions/create', { templateUrl: 'views/predictions/create.html' })  
     .when('/predictions/:predictionId/edit', { templateUrl: 'views/predictions/edit.html' })
-    .when('/predictions/:predictionId', { templateUrl: 'views/predictions/view.html' })
+    .when('/predictions/:predictionId', { templateUrl: 'views/predictions/groupPrediction.html' })
 	.otherwise({redirectTo: '/'});
 }]);
 

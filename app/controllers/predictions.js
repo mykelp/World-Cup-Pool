@@ -7,7 +7,7 @@ exports.create = function (req, res) {
   var prediction = new Prediction(req.body)
   prediction._id = "prediction_id_" + req.user.username
   prediction.predictor = req.user
-  prediction.predictions = req.body.predictions
+  prediction.stagePredictions = req.body.stagePredictions
   prediction.save()
   res.jsonp(prediction)
 }
