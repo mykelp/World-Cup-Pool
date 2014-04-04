@@ -30,7 +30,7 @@ module.exports = {
     }
   },
   production: {
-    db: 'mongodb://localhost/wcp',
+    db: 'mongodb://wcpadmin:wcp2014!@oceanic.mongohq.com:10030/app23706039',
     root: rootPath,
     notifier: notifier,
     app: {
